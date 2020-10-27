@@ -5,6 +5,7 @@
  */
 package main;
 
+
 import java.util.Scanner; // Importação do objeto Scanner.
 
 /**
@@ -18,10 +19,31 @@ import java.util.Scanner; // Importação do objeto Scanner.
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner leia = new Scanner (System.in); // Leitor de variável tipo o Scanf do C.
-        int valor = leia.nextInt();
-        String resultado = (valor % 2 == 0) ? valor + " é PAR" : valor + " é IMPAR"; // operador Ternário
-        System.out.println(resultado);
+        Scanner leia = new Scanner(System.in);
+        float n = leia.nextFloat();
+        float m = leia.nextFloat();
+        float h[] = new float[4];
+        float x[] = new float[3];
+        float y[] = new float[6]; 
+        for(int i = 0; i < 4; i++){
+            h[i] = leia.nextFloat();
+        }
+        for(int i = 0; i < 3; i++){
+            x[i] = leia.nextFloat();
+        }
+        
+        for(int i = 0; i < 4; i++ ){
+        
+            for(int j = 0; j < 3; j++ ){           
+                y[i] += x[i - j] * h[j];
+                System.out.println(y[i]);
+            }
+        
+        }
+        
     }
-    
+        
+        
 }
+    
+
