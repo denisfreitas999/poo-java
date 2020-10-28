@@ -67,7 +67,7 @@ public class Pilha {
     public static void main(String[] args) {
         // TODO code application logic here
         Pilha p = new Pilha();
-        
+            
        for(int i =1; i < 6 ; i++){
            p.push(i);
        }
