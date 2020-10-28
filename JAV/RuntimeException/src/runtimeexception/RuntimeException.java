@@ -18,7 +18,7 @@ public class RuntimeException {
      */
     public static void main(String[] args) {
         // ========== TRATAMENTO DE ERROS ====================================
-        try{ //TENTE
+        try{ //TENTE // verifica se houve erros e vai para o block de excessões
             int valor1, valor2, resultado;
 
             Scanner leia = new Scanner(System.in);
@@ -41,7 +41,7 @@ public class RuntimeException {
         catch(Exception e){
             System.out.println("Erro");
         }
-        finally{
+        finally{ // Esse comando sempre executa, se deu erro ou não, 
             System.out.println("Fim do programa");
         }
         
