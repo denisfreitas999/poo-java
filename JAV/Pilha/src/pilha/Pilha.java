@@ -19,51 +19,51 @@ public class Pilha {
         topo = -1; //posição inválida do vetor
     }
     
-    //empilha o elemento no topo da lista
-    public void push(int e){
-        if(isFull()){
-            throw new RuntimeException("Stack OverFlow!");
+        //empilha o elemento no topo da lista
+        public void push(int e){
+            if(isFull()){
+                throw new RuntimeException("Stack OverFlow!");
+            }
+            topo++;
+            elementos[topo] = e;
         }
-        topo++;
-        elementos[topo] = e;
-    }
-    
-    //desempilha o elemento no topo da lista
-    public int pop(){ 
-        if(isEmpty()){
-            throw new RuntimeException("Empty Stack!");
+
+        //desempilha o elemento no topo da lista
+        public int pop(){ 
+            if(isEmpty()){
+                throw new RuntimeException("Empty Stack!");
+            }
+            int e;
+            e = elementos[topo];
+            topo--;
+            return e;
         }
-        int e;
-        e = elementos[topo];
-        topo--;
-        return e;
-    }
-    
-    //verifica se a pilha está vazia
-    public boolean isEmpty(){ 
-        if(topo == -1){
-            return true;
-        }else{
-            return false;
+
+        //verifica se a pilha está vazia
+        public boolean isEmpty(){ 
+            if(topo == -1){
+                return true;
+            }else{
+                return false;
+            }
         }
-    }
-    
-    //verifica se a pilha está cheia
-    public boolean isFull(){ 
-        if(topo == elementos.length - 1){
-            return true;
-        }else{
-            return false;
+
+        //verifica se a pilha está cheia
+        public boolean isFull(){ 
+            if(topo == elementos.length - 1){
+                return true;
+            }else{
+                return false;
+            }
         }
-    }
-    
-    //retorna o elemento do topo da pilha
-    public int top(){ 
-        if(isEmpty()){
-            throw new RuntimeException("Empty Stack!");
+
+        //retorna o elemento do topo da pilha
+        public int top(){ 
+            if(isEmpty()){
+                throw new RuntimeException("Empty Stack!");
+            }
+            return elementos[topo];
         }
-        return elementos[topo];
-    }
     public static void main(String[] args) {
         // TODO code application logic here
         Pilha p = new Pilha();
@@ -77,7 +77,7 @@ public class Pilha {
             System.out.println("Desempilhei o: "+elemento);
         }
         
-        int e = p.pop();
+
         
     }
     
