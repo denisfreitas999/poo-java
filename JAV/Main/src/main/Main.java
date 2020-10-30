@@ -84,53 +84,40 @@ import java.util.Scanner; // Importação do objeto Scanner.
         // TODO code application logic here
         Scanner leia = new Scanner(System.in);
        
-       String x;
+       String x = "";
        int n;
-       int temp[];
-       temp = new int[10];
-       int contador = 0;
-       int m = 0;
        
        ArrayList valores = new ArrayList();
-       ArrayList valor = new ArrayList();
 
         do{
         x = leia.nextLine();
         if(x.equals("C")){  
             Main pilha = new Main();
               
-               do{                   
+               while(!x.equals("F")){  
                     x = leia.nextLine();
+                    switch(x.charAt(0)){
+                        case 'I':
+                            if(!pilha.isFull()){
+                                String partes[] = x.split(" ",2);
+                                n = Integer.parseInt(partes[1]);
+                                pilha.push(n);
+                                valores.add(n);
                   
-                        if(x.equals("I")){
-                        n = leia.nextInt();
-                        pilha.push(n);
-                        contador++;
-                        valores.add(n);
-                        
-                        //for(int i = 0; i < contador ; i++){
-                        //    temp[i] = n;
-                        //}
-                        
-                    }
-
-                    if(x.equals("R")){
-                        
-                        if(pilha.isEmpty()){
-                            System.out.println("Pilha vazia");
-                        }else{
-                            pilha.pop();
-
-                            //valores.clear();
-                            int h = valores.size()-1;
-                            if(h > -1){
-                                valores.remove(valores.get(h));
                             }
-                            
-                        }
-                    }
-                        
-                    if(x.equals("P")){                    
+                            break;
+                        case 'R':
+                                if(pilha.isEmpty()){
+                                    System.out.println("Pilha vazia");
+                                }else{
+                                    pilha.pop();
+                                    int h = valores.size()-1;
+                                    if(h > -1){
+                                        valores.remove(valores.get(h));
+                                    }
+                                }
+                                break;
+                        case 'P':
                             if(valores.isEmpty()){
                                 System.out.println("Pilha vazia");
                             }else{
@@ -138,13 +125,14 @@ import java.util.Scanner; // Importação do objeto Scanner.
                                 System.out.print(valores.get(k)+" ");                              
                             }
                             System.out.println("");
-                        }
-                    }
-                    if(x.equals("C")){
-                        System.out.println("Pilha já criada");
+                            }
+                            break;
+                    
+                        case 'C':
+                            System.out.println("Pilha já criada");
                     }
                     
-                    }while(!x.equals("F"));
+                }
            }else if(x.equals("F")){
                 break;
            }else{
@@ -153,12 +141,8 @@ import java.util.Scanner; // Importação do objeto Scanner.
         }
         while(!x.equals("F"));
             
-            
-       
-        
     }
-        
-        
+      
 }
     
 
