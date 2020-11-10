@@ -35,7 +35,7 @@ import java.util.*;
         
         for (int i = 0; i < quantidadePares; i++) {
             int par = aleatorio.nextInt(quantidadePares);
-            int componente = aleatorio.nextInt(2);
+            int componente = aleatorio.nextInt(2);  
             int par_2 = aleatorio.nextInt(quantidadePares);
             String aux = pares[par_2][componente];
             pares[par_2][componente] = pares[par][componente];
