@@ -31,7 +31,7 @@ import java.util.*;
             }
         }
         
-        System.out.println(Arrays.deepToString(pares)); //antes do sorteio
+        //System.out.println(Arrays.deepToString(pares)); //antes do sorteio
         
         for (int i = 0; i < quantidadePares; i++) {
             int par = aleatorio.nextInt(quantidadePares);
@@ -41,7 +41,7 @@ import java.util.*;
             pares[par_2][componente] = pares[par][componente];
             pares[par][componente] = aux;
         }
-        System.out.println(Arrays.deepToString(pares)); //após o sorteio
+        //System.out.println(Arrays.deepToString(pares)); //após o sorteio
         
         for (int i = 0; i < quantidadePares; i++) {
             System.out.println(pares[i][0] + " " + pares[i][1]);

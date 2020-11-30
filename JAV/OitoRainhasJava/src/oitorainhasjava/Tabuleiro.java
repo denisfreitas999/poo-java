@@ -5,6 +5,9 @@
  */
 package oitorainhasjava;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author denis
@@ -46,7 +49,7 @@ public static int get(int x, int y) {
    }
    System.out.println();
   }
-     System.out.println("============================================");
+     //System.out.println("============================================");
  }
  
 public void pinta(){
@@ -63,7 +66,7 @@ public void pinta(){
 
  //==================================================================
  
-public void verifica(){
+public boolean verifica(){
     
     
     // for para verificar diagonais
@@ -76,7 +79,8 @@ public void verifica(){
                 if(tabuleiro[i][j] == 1){
                     temp++;
                     if(temp >= 2 ){
-                        System.out.println("false");
+                        //System.out.println("false");
+                        return false;
                     }
          
                 }
@@ -94,30 +98,48 @@ public void verifica(){
             if(tabuleiro[i][j] == 1){
                     acres++;
                     if(acres >= 2 ){
-                        System.out.println("false");
+                        return false;
                     }
          
                 }
         }
-       // System.out.println("");
+        //System.out.println("");
     }
-    
+    return true;
 }
   
  //===================================================================
  public static void main(String[] args) {
         Tabuleiro tabuleiro = new Tabuleiro();
         tabuleiro.encheZeros();
+        Scanner leia = new Scanner(System.in);
+        String valor;
+        valor = leia.nextLine();
+        
+        for (int i = 0; i < 8; i++) {
+         String partes[] = valor.split(" ",8);
+         int n = Integer.parseInt(partes[i]);
+         //System.out.println(n);
+         colocaRainha(n);
+     }
+        
+        /*
         colocaRainha(2);
-        colocaRainha(2);
-        colocaRainha(7);
+        colocaRainha(5);
         colocaRainha(0);
+        colocaRainha(7);
         colocaRainha(3);
         colocaRainha(6);
         colocaRainha(4);
         colocaRainha(1);
-        tabuleiro.printBoard();
-        tabuleiro.verifica();
+        */
+        //tabuleiro.printBoard();
+        if (tabuleiro.verifica() == true) {
+            System.out.println("True");
+     }else{
+            System.out.println("False");
+        }
+ 
         
            
  }

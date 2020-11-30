@@ -61,7 +61,7 @@ public class NovaPilha {
        int capacidade = 0;
        int n;
        String x = "";
-       ArrayList valores = new ArrayList();
+       ArrayList <Integer> valores = new  ArrayList<Integer>();
        
        do{
            x = leia.nextLine();
