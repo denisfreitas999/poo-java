@@ -11,7 +11,7 @@ public class Aula09POOGustGuanabara {
         l[1] = new Livro("A menina que roubava livros", "Markus Zusak ", 468, p[0]);
         l[2] = new Livro("O menino do pijama listrado", "John Boyne", 192, p[0]);
         l[0].abrir();
-        l[0].folhear(200);
+        l[0].folhear(200    );
         System.out.println(l[0].detalhes());
     }
     
