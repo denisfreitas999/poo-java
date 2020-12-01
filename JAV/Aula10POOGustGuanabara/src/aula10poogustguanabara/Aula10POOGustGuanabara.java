@@ -10,6 +10,11 @@ public class Aula10POOGustGuanabara {
         System.out.println(p2.toString());
         System.out.println(p3.toString());
         System.out.println(p4.toString());
+        
+        p2.setCurso("Informática");
+        p3.setSalario(2500.35f);
+        p3.setEspecialidade("Ciências da Computação");
+        p2.setMatricula(20121);
     }
     
 }
